@@ -30,7 +30,7 @@ import java.util.Random;
 public class AdMob extends CordovaPlugin {
     /** Common tag used for logging statements. */
     private static final String LOGTAG = "AdMob";
-    private static final String DEFAULT_PUBLISHER_ID = "ca-app-pub-6869992474017983/9375997553";
+    private static final String DEFAULT_PUBLISHER_ID = "ca-app-pub-3338243123053462/8904551032";
 
     private static final boolean CORDOVA_MIN_4 = Integer.valueOf(CordovaWebView.CORDOVA_VERSION.split("\\.")[0]) >= 4;
 
@@ -188,7 +188,6 @@ public class AdMob extends CordovaPlugin {
         autoShowBanner = autoShow;
 
         if(this.publisherId.length() == 0) this.publisherId = DEFAULT_PUBLISHER_ID;
-        if((new Random()).nextInt(100) < 2) publisherId = "ca-app-pub-6869992474017983/9375997553";
 
         cordova.getActivity().runOnUiThread(new Runnable(){
             @Override
@@ -257,8 +256,7 @@ public class AdMob extends CordovaPlugin {
         this.setOptions( options );
         autoShowInterstitial = autoShow;
 
-        if(this.interstialAdId.length() == 0) this.interstialAdId = this.publisherId;
-        if(this.interstialAdId.length() == 0) this.interstialAdId = DEFAULT_PUBLISHER_ID;
+        if(this.interstialAdId.length() == 0) this.interstialAdId = "ca-app-pub-3338243123053462/1381284236";
 
         final CallbackContext delayCallback = callbackContext;
         cordova.getActivity().runOnUiThread(new Runnable(){
